@@ -10,14 +10,14 @@ ClickLivro é um sistema web desenvolvido para auxiliar leitores na organizaçã
 - Miguel Lorenço da Silva Vieira
 
 # Funcionalidades
-Registrem e organizem livros em suas bibliotecas.
-Acompanhem o progresso de leituras em andamento.
-Planejem leituras futuras desejadas.
+- Registrem e organizem livros em suas bibliotecas.
+- Acompanhem o progresso de leituras em andamento.
+- Planejem leituras futuras desejadas.
 
 # Ferramentas e Tecnologias
-Front-end: HTML, CSS
-Back-end: PHP, JavaScript
-Banco de Dados: SQL
+- Front-end: HTML, CSS
+- Back-end: PHP, JavaScript
+- Banco de Dados: SQL
 
 # Documentação e Visualização
 https://docs.google.com/document/d/1Y5hgWaM9rrZ71b0oVwkDbxTjjVmEOdBk_nIJi5iobCY/
