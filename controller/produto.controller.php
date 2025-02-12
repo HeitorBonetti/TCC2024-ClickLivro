@@ -17,12 +17,15 @@ if ($acao == 'inserir') {
     $produto->__set('idioma', $_POST['idioma']);
     $produto->__set('editora', $_POST['editora']);
     $produto->__set('imagem', $_FILES['imagem']['name']);
+    $produto->__set('descricao', $_POST['descricao']);
 
     $conexao = new Conexao();
     $produtoService = new ProdutoService($produto, $conexao);
     $produtoService->inserir();
     header("location: cadProduto.php");
 
+
+    
 }
 
 if ($acao == 'recuperar') {
@@ -30,7 +33,58 @@ if ($acao == 'recuperar') {
     $conexao = new Conexao();
 
     $produtoService = new ProdutoService($produto, $conexao);
-    $produto = $produtoService->recuperar();
+    $produto = $produtoService->recuperar(); 
+    
+}
+
+if ($acao == 'recuperarpesquisa') {
+    $produto = new Produto();
+    $conexao = new Conexao();
+
+    $produtoService = new ProdutoService($produto, $conexao);
+    $produto = $produtoService->recuperarpesquisa();
+
+    
+}
+
+if ($acao == 'recuperarclassicos') {
+    $produto = new Produto();
+    $conexao = new Conexao();
+
+    $produtoService = new ProdutoService($produto, $conexao);
+    $produto = $produtoService->recuperarclassicos();
+}
+
+if ($acao == 'recuperarfamosos') {
+    $produto = new Produto();
+    $conexao = new Conexao();
+
+    $produtoService = new ProdutoService($produto, $conexao);
+    $produto = $produtoService->recuperarfamosos();
+}
+
+if ($acao == 'recuperarnovos') {
+    $produto = new Produto();
+    $conexao = new Conexao();
+
+    $produtoService = new ProdutoService($produto, $conexao);
+    $produto = $produtoService->recuperarnovos();
+}
+
+if ($acao == 'recuperarrestrita') {
+    $produto = new Produto();
+    $conexao = new Conexao();
+
+    $produtoService = new ProdutoService($produto, $conexao);
+    $produto = $produtoService->recuperarrestrita();
+}
+
+if ($acao == 'recuperarrecomendado') {
+    $produto = new Produto();
+    $conexao = new Conexao();
+
+    $produtoService = new ProdutoService($produto, $conexao);
+    $produto = $produtoService->recuperarrecomendado();
 }
 
 if ($acao == 'recuperarProduto') {
@@ -68,6 +122,7 @@ if ($acao == 'alterar') {
     {
         $produto->__set('imagem', $_SESSION['imagem']);
     }
+    $produto->__set('editora', $_POST['descricao']);
     $produto->__set('id', $_POST['id']);
 
     $conexao = new Conexao();

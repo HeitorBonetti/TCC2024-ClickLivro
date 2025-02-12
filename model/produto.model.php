@@ -6,7 +6,9 @@ class Produto{
 	private $paginas;
 	private $idioma;
 	private $editora;
+	private $tag;
 	private $imagem;
+	private $descricao;
 
 	public function __set($atributo, $valor)
 	{

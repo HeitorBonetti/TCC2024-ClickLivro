@@ -6,6 +6,7 @@ use registro;
 CREATE TABLE users (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     imagem varchar(50) NOT NULL
 );
@@ -17,8 +18,9 @@ CREATE TABLE produtos (
     paginas int NOT NULL,
     idioma varchar(100) NOT NULL,
     editora varchar(100) NOT NULL,
-    tag varchar(100) NOT NULL, -- classico / famoso / novo
-    imagem varchar(50) not null
+    tag varchar(100), -- classico / famoso / novo
+    imagem varchar(50) not null,
+    descricao varchar(1000) not null
 );
 
 CREATE TABLE livros_biblioteca(
@@ -30,11 +32,13 @@ CREATE TABLE livros_biblioteca(
     editora varchar(100) NOT NULL,
     imagem varchar(50) NOT NULL,
     lidas int,
-    estado int,
+    estado varchar(50), -- Lido, Lendo, Quero Ler, Abandonado
     notas int,
-    id_prod int NOT NULL,
-    id_user int not null,
-    foreign key (id_prod) references produtos(id),
-    foreign key (id_user) references users(id)
+    id_prod int,
+    id_user int
 
 );
+
+ALTER TABLE livros_biblioteca
+ADD FOREIGN KEY (id_prod) REFERENCES produtos(id),
+ADD FOREIGN KEY (id_user) REFERENCES users(id);

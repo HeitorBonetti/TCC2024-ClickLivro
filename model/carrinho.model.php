@@ -2,10 +2,16 @@
     class Carrinho
     {
         private $id;
-        private $id_user;
+        private $autor;
+        private $paginas;
+        private $idioma;
+        private $editora;
+        private $imagem;
+        private $lidas;
+        private $estado;
+        private $notas;
         private $id_prod;
-        private $qtn;
-        private $preco_prod;
+        private $id_user;
 
         public function __set($atributo, $valor)
         {
